@@ -20,7 +20,7 @@ import audio_player                     ### Audio player file ###
 #Can't access source on OBS
 
 ##################### ADD TWITCH CHANNEL HERE #####################
-TWITCH_CHANNEL = 'Twitch Channel here'
+TWITCH_CHANNEL = 'mr_cheese_22'
 
 ##################### MESSAGE QUEUE VARIABLES #####################
 # MESSAGE_RATE controls how fast we process incoming Twitch Chat messages. It's the number of seconds it will take to handle all messages in the queue.
@@ -139,11 +139,9 @@ def handle_message(message, audio_player):
     except Exception as e:
         print("Encountered exception: " + str(e))
 
-countdown = 5
-while countdown > 0:
-    print(countdown)
-    countdown -= 1
-    time.sleep(1)
+
+print("Starting TwitchTTS for --> " + TWITCH_CHANNEL)
+time.sleep(1)
 
 t = TwitchPlays_Connection.Twitch()
 t.twitch_connect(TWITCH_CHANNEL)
